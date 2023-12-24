@@ -1,0 +1,75 @@
+<body>
+  <!-- ======= Header ======= -->
+  <div class="header">
+    <div class="header-left">
+      <a routerLink="/home">
+        <img src="/assets/img/logo.png" width="70%" alt="Logo" />
+      </a>
+    </div>
+    <ul class="nav user-menu">
+      <li class="nav-item me-2 m-2">
+        <button (click)="handleConnected()" class="btn btn-primary">
+          Se connecter
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <ng-container *ngIf="login; else page">
+    <app-login></app-login>
+  </ng-container>
+
+  <ng-template #page>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <h1 data-aos="fade-up">
+              Plateforme de gestion des enseignements et emplois du temps.
+            </h1>
+            <h2
+              style="font-size: large"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              Transformez la gestion manuelle de vos emplois du temps en une
+              gestion automatisée et efficace.
+            </h2>
+            <div data-aos="fade-up" data-aos-delay="600">
+              <div class="text-center text-lg-start">
+                <a
+                  href="#about"
+                  class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                >
+                  <span>Consuler les emplois du temps</span>
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-lg-6 hero-img"
+            data-aos="zoom-out"
+            data-aos-delay="200"
+          >
+            <img src="/assets/img/hero-img.png" class="img-fluid" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about col-md-12 container">
+      <div style="background-color: #012970" class="card-header text-white">
+        Consulter les emplois du temps de l'ENSET de Mohammedia en un clic.
+      </div>
+      <app-timetable></app-timetable>
+    </section>
+  </ng-template>
+
+  <!-- End #main -->
+</body>
